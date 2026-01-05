@@ -1,20 +1,54 @@
-var numbers=[20,2,1,30,15];
-numbers.sort(function(x,y){
-    return x-y;
+var numbers = [];
+
+for (var i = 0; i < 5; i++) {
+    var input;
+    do {
+        input = prompt(`Enter number ${i + 1} of 5:`);
+    } while (input === "" || isNaN(input) || input === null);
+        numbers.push(Number(input));
+}
+
+numbers.sort(function(a, b) {
+    return a - b;
 });
-console.log(numbers);
+
+var resultDiv = document.createElement("div");
+resultDiv.style.marginTop = "20px";
+resultDiv.style.fontWeight = "bold";
+resultDiv.textContent = "Sorted Numbers: " + numbers.join(", ");
+
+document.body.appendChild(resultDiv);
+
+var cloneDiv =resultDiv.cloneNode(true);
+cloneDiv.textContent="Reverse Numbers: "+numbers.reverse().join(", ");
+document.body.appendChild(cloneDiv);
 
 //////////////////////////////////////////////////////////////////////
 // var table = document.getElementsByTagName("table")[0];
 // var tableBody=document.getElementsByTagName("tbody")[0];
 
-// var numberOfUsers=prompt("enter the number of user");
-// var namee=[];
-// var age=[];
-// for(var i=0;i<numberOfUsers;i++){
-//     namee[i]=prompt(`please enter the name of the ${i+1} person`);
-//     age[i] =prompt(`please enter the age of the ${i+1} person`);
+
+// var numberOfUsers;
+// do {
+//     numberOfUsers = prompt("enter the number of user");
+// } while (numberOfUsers === "" || isNaN(numberOfUsers) || numberOfUsers <= 0);
+
+// var namee = [];
+// var age = [];
+// for (var i = 0; i < numberOfUsers; i++) {
+//     var inputName;
+//     do {
+//         inputName = prompt(`please enter the name of the ${i + 1} person`);
+//     } while (inputName === null || inputName.trim() === "");
+//     namee[i] = inputName;
+
+//     var inputAge;
+//     do {
+//         inputAge = prompt(`please enter the age of the ${i + 1} person`);
+//     } while (inputAge === "" || isNaN(inputAge) || inputAge <= 0 || inputAge > 100);
+//     age[i] = inputAge;
 // }
+
 
 // for(var i=0;i<numberOfUsers;i++){
 //     var row=document.createElement("tr");
