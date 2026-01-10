@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<img id="1" src="marble1.jpg" width="50" height="30"/>
+
+<img id="2" src="marble1.jpg" width="50" height="30"/>
+
+<img id="3" src="marble1.jpg" width="50" height="30"/>
+
+<img id="4" src="marble1.jpg" width="50" height="30"/>
+
+<img id="5" src="marble1.jpg" width="50" height="30"/>
+
+<script>
+    var id = 0;
+    var prevImg = null;
+setInterval(function(){
+    if(prevImg!=null){
+        prevImg.src="marble1.jpg";
+    }
+    id=(id%5)+1;
+    console.log(id);
+    var img= document.getElementById(id.toString());
+    img.src="marble2.jpg";
+    prevImg= img;
+},700);
+
+
+</script>
+</body>
+</html>

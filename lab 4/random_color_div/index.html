@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:  200px;
+            height: 200px;
+            background-color: blueviolet;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+       var d = document.querySelector("div");
+       setInterval(function(){
+           var r = Math.floor(Math.random()*256);
+           var g = Math.floor(Math.random()*256);
+           var b = Math.floor(Math.random()*256);
+           var dClone = d.cloneNode(true);
+           dClone.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+            document.body.appendChild(dClone);
+       }, 2000);
+       
+    </script>
+</body>
+</html>

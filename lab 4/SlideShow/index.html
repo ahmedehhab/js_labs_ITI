@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="next()" >Next</button>
+    <button type="button" onclick="slideWindow()">SlideWindow</button>
+    <button type="button" onclick="stopSlide()">Stop</button>
+    <button type="button" onclick="prev()">Previous</button>
+      <br></br>
+    <img id="slide" src="1.jpg" width="500" height="300"/>
+    <script>
+        var images = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];
+        var index=0;
+         function next(){
+             index++;
+             if(index>=images.length){
+                 index=0;
+             }
+             document.getElementById("slide").src=images[index];
+         }
+            function prev(){
+                index--;
+                if(index<0){
+                    index=images.length-1;
+                }
+                document.getElementById("slide").src=images[index];
+            }
+            function slideWindow() {
+                interval = setInterval(next, 2000);
+            }
+            function stopSlide() {
+                clearInterval(interval);
+            }
+    </script>
+</body>
+</html>
