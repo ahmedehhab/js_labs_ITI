@@ -8,11 +8,14 @@
 <body>
    <script>
     window.addEventListener("keydown", function(event) {
-    alert("Key pressed: " + event.key);
-    alert("Physical code: " + event.code);
-    alert("Alt key pressed" + event.altKey);
-    alert("Control key pressed" + event.ctrlKey);
-    alert("ASCII CODE" + event.key.charCodeAt(0));
+        if(event.shiftKey)
+        {
+            alert("Shift key pressed " + event.shiftKey);
+        }else if(event.ctrlKey)
+        {
+            alert("Ctrl key pressed " + event.ctrlKey);
+        }else  alert("ASCII CODE " + event.key.charCodeAt(0));
+    
     
 });
        </script>
